@@ -1,0 +1,65 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db"
+}
+
+model Department {
+  id        String     @id @default(cuid())
+  name      String     @unique
+  employees Employee[]
+  tickets   Ticket[]
+  createdAt DateTime   @default(now())
+  updatedAt DateTime   @updatedAt
+}
+
+model Employee {
+  id                    String     @id @default(cuid())
+  name                  String
+  email                 String     @unique
+  role                  String
+  skillTags             String     // Comma separated list of skills
+  averageResolutionTime Int        @default(0) // in minutes
+  currentLoad           Int        @default(0)
+  availability          String     @default("Available") // "Available", "Busy", "On Leave"
+  
+  departmentId          String
+  department            Department @relation(fields: [departmentId], references: [id])
+  tickets               Ticket[]
+  
+  createdAt             DateTime   @default(now())
+  updatedAt             DateTime   @updatedAt
+}
+
+model Ticket {
+  id                      String   @id @default(cuid())
+  title                   String
+  description             String
+  
+  // AI Output
+  category                String?
+  aiSummary               String?
+  severity                String?
+  resolutionPath          String?  // "Auto-resolve", "Assign to department"
+  sentiment               String?
+  confidenceScore         Float?
+  estimatedResolutionTime Int?
+  
+  // Ticket routing & assignment
+  status                  String   @default("New") // "New", "Assigned", "In Progress", "Pending Info", "Resolved", "Closed"
+  departmentId            String?
+  department              Department? @relation(fields: [departmentId], references: [id])
+  assigneeId              String?
+  assignee                Employee?   @relation(fields: [assigneeId], references: [id])
+  
+  // Auto-resolution
+  autoResponse            String?
+  userFeedbackIsHelpful   Boolean?
+  aiAnalysisRaw           String?
+  
+  createdAt               DateTime @default(now())
+  updatedAt               DateTime @updatedAt
+}
