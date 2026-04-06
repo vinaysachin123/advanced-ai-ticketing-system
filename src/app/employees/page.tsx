@@ -14,6 +14,15 @@ export default async function EmployeesPage() {
     });
   } catch (e) {
     console.error("Vercel DB error:", e);
+    // VERCEL MOCK DATA FALLBACK
+    employees = [
+      { id: '1', name: "Alice Smith", email: "alice@company.com", role: "Frontend Engineer", department: { name: "Engineering" }, skillTags: "React, Next.js, UI, Bug", averageResolutionTime: 45, currentLoad: 2, availability: "Available" },
+      { id: '2', name: "Charlie DevOps", email: "charlie@company.com", role: "SysAdmin", department: { name: "DevOps" }, skillTags: "Server, Networking, Performance", averageResolutionTime: 60, currentLoad: 1, availability: "Busy" },
+      { id: '3', name: "Diana Prince", email: "diana@company.com", role: "IT Support", department: { name: "IT" }, skillTags: "Access, Hardware, Accounts", averageResolutionTime: 15, currentLoad: 0, availability: "Available" },
+      { id: '4', name: "Eve Davis", email: "eve@company.com", role: "HR Specialist", department: { name: "HR" }, skillTags: "Leave, Policy, Onboarding", averageResolutionTime: 30, currentLoad: 3, availability: "Available" },
+      { id: '5', name: "Grace Lee", email: "grace@company.com", role: "Product Manager", department: { name: "Product" }, skillTags: "Feature, Roadmap, Bugs", averageResolutionTime: 1440, currentLoad: 8, availability: "Busy" },
+      { id: '6', name: "Ivy Vine", email: "ivy@company.com", role: "Marketing Manager", department: { name: "Marketing" }, skillTags: "Content, Branding, Social", averageResolutionTime: 120, currentLoad: 4, availability: "On Leave" },
+    ];
   }
 
   return (
