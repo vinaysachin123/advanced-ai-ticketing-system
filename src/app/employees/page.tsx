@@ -2,14 +2,19 @@ import prisma from '@/lib/prisma';
 import { Mail, Briefcase, Activity, CheckCircle2, XCircle, Clock } from 'lucide-react';
 
 export default async function EmployeesPage() {
-  const employees = await prisma.employee.findMany({
-    include: {
-      department: true
-    },
-    orderBy: {
-      department: { name: 'asc' }
-    }
-  });
+  let employees: any[] = [];
+  try {
+    employees = await prisma.employee.findMany({
+      include: {
+        department: true
+      },
+      orderBy: {
+        department: { name: 'asc' }
+      }
+    });
+  } catch (e) {
+    console.error("Vercel DB error:", e);
+  }
 
   return (
     <div className="space-y-8 animate-slideDown">
@@ -63,7 +68,7 @@ export default async function EmployeesPage() {
                   <span>{emp.email}</span>
                 </div>
                 <div className="flex flex-wrap gap-2 pt-2">
-                  {emp.skillTags.split(',').map((skill) => (
+                  {emp.skillTags && typeof emp.skillTags === 'string' && emp.skillTags.split(',').map((skill: string) => (
                     <span key={skill} className="px-2.5 py-1 bg-slate-100 dark:bg-slate-700/50 text-slate-600 dark:text-slate-300 rounded-lg text-xs font-semibold">
                       {skill.trim()}
                     </span>

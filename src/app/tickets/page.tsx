@@ -4,15 +4,20 @@ import TicketList from './TicketList';
 export const dynamic = 'force-dynamic';
 
 export default async function TicketsPage() {
-  const tickets = await prisma.ticket.findMany({
-    include: {
-      department: true,
-      assignee: true,
-    },
-    orderBy: {
-      createdAt: 'desc',
-    },
-  });
+  let tickets: any[] = [];
+  try {
+    tickets = await prisma.ticket.findMany({
+      include: {
+        department: true,
+        assignee: true,
+      },
+      orderBy: {
+        createdAt: 'desc',
+      },
+    });
+  } catch (e) {
+    console.error("Vercel DB error:", e);
+  }
 
   return (
     <div className="animate-slideDown">

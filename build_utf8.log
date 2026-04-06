@@ -1,0 +1,185 @@
+﻿
+> ai-ticketing-system@0.1.0 build
+> next build
+
+Γû▓ Next.js 16.2.2 (Turbopack)
+- Environments: .env
+
+  Creating an optimized production build ...
+node.exe : Error: Cannot 
+apply unknown utility 
+class `bg-white/70`. Are 
+you using CSS modules or 
+similar and missing 
+`@reference`? https://tail
+windcss.com/docs/functions
+-and-directives#reference-
+directive
+At line:1 char:1
++ & "C:\Program 
+Files\nodejs/node.exe" "C:
+\Users\VINAY\AppData\Roami
+ng\ ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo        
+      : NotSpecified: (E  
+  rror: Cannot a...renc   
+ e-directive:String) [    
+], RemoteException
+    + FullyQualifiedError 
+   Id : NativeCommandErr  
+  or
+ 
+    [2m[at 
+onInvalidCandidate (C:\Use
+rs\VINAY\OneDrive\Document
+s\Advanced AI Ticketing Sy
+stem\node_modules\tailwind
+css\dist\lib.js:21:1314)]
+[0m
+    [2m[at Ee (C:\Users\V
+INAY\OneDrive\Documents\Ad
+vanced AI Ticketing System
+\node_modules\tailwindcss\
+dist\lib.js:16:37066)][0m
+    [2m[at C:\Users\VINAY
+\OneDrive\Documents\Advanc
+ed AI Ticketing System\nod
+e_modules\tailwindcss\dist
+\lib.js:21:355][0m
+    [2m[at _r (C:\Users\V
+INAY\OneDrive\Documents\Ad
+vanced AI Ticketing System
+\node_modules\tailwindcss\
+dist\lib.js:3:1733)][0m
+    [2m[at I (C:\Users\VI
+NAY\OneDrive\Documents\Adv
+anced AI Ticketing System\
+node_modules\tailwindcss\d
+ist\lib.js:3:1377)][0m
+    [2m[at Te (C:\Users\V
+INAY\OneDrive\Documents\Ad
+vanced AI Ticketing System
+\node_modules\tailwindcss\
+dist\lib.js:21:172)][0m
+    [2m[at mn (C:\Users\V
+INAY\OneDrive\Documents\Ad
+vanced AI Ticketing System
+\node_modules\tailwindcss\
+dist\lib.js:38:294)][0m
+    [2m[at process.proces
+sTicksAndRejections (node:
+internal/process/task_queu
+es:103:5)][0m
+    [2m[at async gn (C:\U
+sers\VINAY\OneDrive\Docume
+nts\Advanced AI Ticketing 
+System\node_modules\tailwi
+ndcss\dist\lib.js:38:631)]
+[0m
+    [2m[at async Xr (C:\U
+sers\VINAY\OneDrive\Docume
+nts\Advanced AI Ticketing 
+System\node_modules\@tailw
+indcss\node\dist\index.js:
+10:3416)][0m
+
+> Build error occurred
+Error: Turbopack build 
+failed with 1 errors:
+./src/app/globals.css
+Error evaluating Node.js 
+code
+CssSyntaxError: 
+tailwindcss: C:\Users\VINA
+Y\OneDrive\Documents\Advan
+ced AI Ticketing System\sr
+c\app\globals.css:1:1: 
+Cannot apply unknown 
+utility class 
+`bg-white/70`. Are you 
+using CSS modules or 
+similar and missing 
+`@reference`? https://tail
+windcss.com/docs/functions
+-and-directives#reference-
+directive
+    at Input.error (node_m
+odules/postcss/lib/input.j
+s:135:16) [C:\Users\VINAY\
+OneDrive\Documents\Advance
+d AI Ticketing System\.nex
+t\build\chunks\node_module
+s_13sb.px._.js:4651:22]
+    at error (node_modules
+/postcss/lib/node.js:146:3
+2) [C:\Users\VINAY\OneDriv
+e\Documents\Advanced AI 
+Ticketing System\.next\bui
+ld\chunks\node_modules_13s
+b.px._.js:928:38]
+    [at Object.Once (C:\Us
+ers\VINAY\OneDrive\Documen
+ts\Advanced AI Ticketing S
+ystem\node_modules\@tailwi
+ndcss\postcss\dist\index.j
+s:10:6913)]
+    [at process.processTic
+ksAndRejections (node:inte
+rnal/process/task_queues:1
+03:5)]
+    at async 
+LazyResult.runAsync (node_
+modules/postcss/lib/lazy-r
+esult.js:293:11) [C:\Users
+\VINAY\OneDrive\Documents\
+Advanced AI Ticketing Syst
+em\.next\build\chunks\node
+_modules_13sb.px._.js:6214
+:21]
+    at async transform (tu
+rbopack:///[turbopack-node
+]/transforms/postcss.ts:70
+:34) [C:\Users\VINAY\OneDr
+ive\Documents\Advanced AI 
+Ticketing System\.next\bui
+ld\chunks\[root-of-the-ser
+ver]__0d-m0h0._.js:146:36]
+    at async run (turbopac
+k:///[turbopack-node]/chil
+d_process/evaluate.ts:89:2
+3) [C:\Users\VINAY\OneDriv
+e\Documents\Advanced AI 
+Ticketing System\.next\bui
+ld\chunks\[root-of-the-ser
+ver]__0ubbtyl._.js:443:31]
+
+Import trace:
+  Client Component 
+Browser:
+    ./src/app/globals.css 
+[Client Component Browser]
+    ./src/app/layout.tsx 
+[Server Component]
+
+
+    at async transform (tu
+rbopack:///[turbopack-node
+]/transforms/postcss.ts:70
+:34) [C:\Users\VINAY\OneDr
+ive\Documents\Advanced AI 
+Ticketing System\.next\bui
+ld\chunks\[root-of-the-ser
+ver]__0d-m0h0._.js:146:36]
+)
+    at async run (turbopac
+k:///[turbopack-node]/chil
+d_process/evaluate.ts:89:2
+3) [C:\Users\VINAY\OneDriv
+e\Documents\Advanced AI 
+Ticketing System\.next\bui
+ld\chunks\[root-of-the-ser
+ver]__0ubbtyl._.js:443:31]
+)

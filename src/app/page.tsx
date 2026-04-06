@@ -5,9 +5,14 @@ import Link from 'next/link';
 export const dynamic = 'force-dynamic';
 
 export default async function DashboardPage() {
-  const tickets = await prisma.ticket.findMany({
-    include: { department: true }
-  });
+  let tickets: any[] = [];
+  try {
+    tickets = await prisma.ticket.findMany({
+      include: { department: true }
+    });
+  } catch (e) {
+    console.error("Vercel DB error:", e);
+  }
 
   const openTickets = tickets.filter(t => !["Resolved", "Closed"].includes(t.status));
   const resolvedTickets = tickets.filter(t => t.status === "Resolved");
