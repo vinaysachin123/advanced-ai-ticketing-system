@@ -58,5 +58,5 @@ This ticketing system acts as a smart "Level 1" helpdesk. Upon submission, an AI
 
 ## Screenshots
 
-![App Demo](/demo.webp)
+![App Demo](public/demo.webp)
 *A demonstration of the full-stack ticketing platform and AI triage.*
